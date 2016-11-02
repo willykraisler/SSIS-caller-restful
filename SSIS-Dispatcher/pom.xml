@@ -1,23 +1,27 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>co.com.bnpparibas.cardif</groupId>
-  <artifactId>SSIS-Dispatcher</artifactId>
-  <version>1.0</version>
-  <packaging>pom</packaging>
-  <name>SSIS DISPATCHER</name>
-  <description>the dispatcher to call ssis jobs</description>
-  <modules>
-  	<module>SSIS-Dispatcher-web</module>
-  	<module>SSIS-Dispatcher-model</module>
-  	<module>SSIS-Dispatcher-ear</module>
-  	<module>SSIS-Dispatcher-service</module>
-  </modules>
-  
-  
-  <properties>
-  <java.version>1.7</java.version>
-    </properties>
-  <build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>co.com.bnpparibas.cardif</groupId>
+	<artifactId>SSIS-Dispatcher</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>SSIS DISPATCHER</name>
+	<description>the dispatcher to call ssis jobs</description>
+	<modules>
+
+		<module>SSIS-Dispatcher-model</module>
+		<module>SSIS-Dispatcher-ear</module>
+		<module>SSIS-Dispatcher-service</module>
+	</modules>
+
+
+	<properties>
+		<java.version>1.7</java.version>
+		<jersey.version>2.6</jersey.version>
+		<guice.version>3.0</guice.version>
+		<guava.version>10.0</guava.version>
+	</properties>
+	<build>
 		<finalName>SSIS-Dispatcher-web</finalName>
 
 		<plugins>
@@ -31,8 +35,47 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 
 	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>${guice.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-servlet</artifactId>
+			<version>${guice.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
+		<!-- servlet -->
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>compile</scope>
+			<version>2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
 </project>

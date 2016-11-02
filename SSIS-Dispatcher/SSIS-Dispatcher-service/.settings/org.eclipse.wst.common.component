@@ -6,6 +6,9 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/test"/>
+        <dependent-module archiveName="SSIS-Dispatcher-model-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/SSIS-Dispatcher-model/SSIS-Dispatcher-model">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="SSIS-Dispatcher-service"/>
         <property name="java-output-path" value="/SSIS-Dispatcher-service/target/classes"/>
     </wb-module>
